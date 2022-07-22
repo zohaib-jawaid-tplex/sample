@@ -1,0 +1,11 @@
+<div class="app-user">
+    <div *ngFor="let list of listUsers" class="row">
+        <div class="card col-5">
+            <div class="card-body">
+                <h5 class="card-title">{{list?.name}}</h5>
+                <p class="card-text">{{list?.email}}</p>
+                <a (click)="getDetails(list)" class="btn btn-primary">Go to details</a>
+            </div>
+        </div>
+    </div>
+</div>

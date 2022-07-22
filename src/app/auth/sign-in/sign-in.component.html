@@ -1,0 +1,29 @@
+<div class="container app-signIn-form">
+    <form [formGroup]="form" (ngSubmit)="sign()">
+        <!-- Email input -->
+        <div class="form-outline mb-4 w-100">
+          <label>Email address</label>
+          <input type="email" type="email" formControlName="email" />
+        </div>
+        <div  *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="errors">
+            <div *ngIf="form.controls['email'].errors">
+            Please enter username
+          </div>
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <label>Password</label>
+          <input type="password" formControlName="password" />
+        </div>
+        <div  *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="errors">
+            <div *ngIf="form.controls['password'].errors">
+              Password to validate that number of characters not less than 4
+              and not more than 8.
+          </div>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="button" type="submit" class="btn btn-primary btn-block mb-4" [disabled]="form.invalid">Sign in</button>
+      </form>
+</div>
